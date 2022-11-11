@@ -34,8 +34,6 @@ alias mc='TERM=rxvt-unicode-256color mc -S modarin256'
 alias sdr='screen -dr'
 alias sls='echo; screen -ls |sed "/There/d;/ockets/d;s/\./ /" | column -t ;echo'
 alias scummvm='scummvm -F -ghq3x'
-alias tel='cat ~/bin/rubrica.csv | tr ";\"" "- " | grep '
-alias SyncAll='ssh root@auth1 /root/Hostadmin/SyncAll'
 # evince ha rotto il cazzo con la sua pletora di errori
 # ogni volta che lo lanci...
 alias evince='evince 2>/dev/null'
