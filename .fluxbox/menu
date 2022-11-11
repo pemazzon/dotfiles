@@ -1,0 +1,30 @@
+#[begin] (fluxbox)
+#[begin] ( <]_fluXbox_[> )
+#[begin] ( .:| flu >< box |:. )
+#[begin] ( -=< flu><box >=- )
+#[begin] (:: fluxbox ::)
+ [begin] ( .:| fluXbox |:. )
+ [encoding] {UTF-8}
+   [exec] (rxvt)            {urxvtc}           <~/.fluxbox/menuicons/light/utilities-terminal-symbolic.symbolic.png> 
+   [exec] (xterm)           {xterm -fn a14 }   <~/.fluxbox/menuicons/light/utilities-terminal-symbolic.symbolic.png> 
+   [exec] (cool retro term) {cool-retro-term}  <~/.fluxbox/menuicons/light/utilities-system-monitor.png> 
+#  [exec] (rxvt small font) {urxvtc -fn a14 }  </locale/paolo/.kde/share/icons/CrystalClear/16x16/apps/terminal.png> 
+#  [exec] (BACULA Mindy)    {. /locale/paolo/.bashrc ; rxvt -fn a14 -fg 'white' -bg 'gray26' -geometry 153x70 -e ssh -Y -A root@mindy}         </locale/paolo/.kde/share/icons/CrystalClear/16x16/apps/terminal.png> 
+#  [exec] (MORK)            {. /locale/paolo/.bashrc ; rxvt -fn a14 -fg 'lightblue1' -bg 'dodgerblue4' -geometry 90x30 -e ssh -Y -A root@mork} </locale/paolo/.kde/share/icons/CrystalClear/16x16/apps/terminal.png> 
+   [nop]
+#[include] (/etc/X11/fluxbox/fluxbox-menu)
+   [exec] (Update Menus)    {xdgmenumaker -i -f fluxbox > ~/.fluxbox/xdg-menu} <~/.fluxbox/menuicons/light/open-menu-symbolic.symbolic.png>
+ [include] (~/.fluxbox/xdg-menu)
+   [nop]
+   [config]  (Configuration)    <~/.fluxbox/menuicons/light/open-menu-symbolic.symbolic.png>
+   [submenu] (Styles)        {} <~/.fluxbox/menuicons/light/applications-graphics-symbolic.symbolic.png>
+      [stylesdir] (/usr/share/fluxbox/styles)
+      [stylesdir] (~/.fluxbox/styles)
+#     [stylesdir] (~/.fluxbox/tenr.de-styles-pkg)
+   [end]
+   [workspaces] (Workspaces)  <~/.fluxbox/menuicons/light/edit-select-all-symbolic.symbolic.png>
+   [reconfig]   (Reconfigure) <~/.fluxbox/menuicons/light/emblem-synchronizing-symbolic.symbolic.png>
+   [restart]    (Restart)     <~/.fluxbox/menuicons/light/view-refresh-symbolic.symbolic.png>
+   [exit]       (Exit)        <~/.fluxbox/menuicons/light/system-shutdown-symbolic.symbolic.png>
+ [endencoding]
+ [end]

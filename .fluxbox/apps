@@ -1,0 +1,38 @@
+[app] (class=biz-papercut-pcng-client-uit-UserClient)
+  [Head]	{1}
+  [Deco]	{BORDER}
+  [Hidden]	{yes}
+[end]
+[app] (class=CSSH)
+  [Deco]	{BORDER}
+[end]
+[app] (class=RDP)
+  [Deco]	{TOOL}
+[end]
+[app] (name=.*[tT]eams) (class=.*[tT]eams)
+  [Workspace]	{4}
+[end]
+[app] (name=.*[sS]lack) (class=.*[sS]lack)
+  [Workspace]	{7}
+  [Position]	(UPPERRIGHT)	{1% 0%}
+[end]
+[app] (name=Google-chrome) (class=Google-chrome) (role=browser)
+  [Deco]	{BORDER}
+[end]
+[app] (name=vmplayer) (class=Vmplayer)
+  [Position]	(UPPERLEFT)	{9% -3%}
+  [Deco]	{NORMAL}
+  [Close]	{yes}
+[end]
+[group]  (workspace=0)
+ [app] (name=claws-mail) (class=Claws-mail) (role=mainwindow)
+ [app] (class=[Tt]hunderbird) (role=3pane)
+  [Position]	(UPPERLEFT)	{0% 0%}
+[end]
+[app] (class=freerdp)
+  [Head]	{2}
+  [Deco]	{BORDER}
+[end]
+[app] (name=brave-browser) (class=Brave-browser) (role=browser)
+  [Head]	{2}
+[end]
