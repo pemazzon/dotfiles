@@ -1,0 +1,30 @@
+#!/bin/bash -x
+
+CONF=~/.config/conky/FontIcons/fonticons.conky
+
+while read i; do export "$i"; done < /etc/os-release
+
+export LANG=en_US.utf8
+export _sym_host=$'\uf0fb'
+export _sym_os=$'\uf308'
+export _sym_kernel=$'\uf3be'
+export _sym_system=$'\uf40b'
+#export _sym_cpu=$'\uf02f'
+#export _sym_cpu=$'\uf544'
+#export _sym_cpu=$'\uf002'
+export _sym_cpu=$'\uf04b'
+export _sym_ram=$'\uf4a6'
+export _sym_swap=$'\uf078'
+export _sym_uptime=$'\uf210'
+export _sym_date=$'\uf23d'
+export _sym_fs=$'\uf00b'
+export _sym_net=$'\uf0a6'
+#export _sym_up=$'\uf31c'
+#export _sym_down=$'\uf31d'
+export _sym_up=$'\uf48a'
+export _sym_down=$'\uf48b'
+export _sym_uload=$'\uf11b'
+export _sym_dload=$'\uf11a'
+export _sym_desk=$'\uf0fb'
+
+conky -c $CONF

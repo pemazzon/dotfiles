@@ -1,0 +1,181 @@
+conky.config = {
+-- conky configuration by BricoMaz <p.e.maz AT libero.it>
+-- use with   conky -c /path/to/this/file
+-- reworked from .conkyrc from fabsh <fabsh@lamerk.org>
+-- Based on ideas and code from the CunchBang Linux forums at http://crunchbanglinux.org
+-- v. 4.5
+
+-- detach and background conky's process
+	background = true,
+	update_interval = 4,
+-- This is the number of times Conky will update before quitting.
+-- Set to zero to run forever.
+	total_run_times = 0,
+	own_window_title = 'Conky',
+----------------------------------------------------------------------------
+--  set this to true only if using picom (compton)
+--	own_window = true,
+----------------------------------------------------------------------------
+-- If own_window is true, these window manager hints may be used
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_transparent = true,
+	own_window_argb_visual = true,
+	own_window_type = 'desktop',
+--  xinerama_head = 1,
+-- Use double buffering (reduces flicker, may not work for everyone)
+	double_buffer = true,
+-- Minimum size of text area
+	minimum_width = 180, minimum_height = 0,
+-- maximum_width 200
+-- use this if you want a nice shadow to appear around conky
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	stippled_borders = 0,
+	border_width = 1,
+-- Text alignment, other possible values are commented
+-- alignment = 'top_left',
+   alignment = 'top_right',
+-- alignment = 'bottom_left'
+-- alignment = 'bottom_right'
+-- Gap between borders of screen and text
+-- same thing as passing -x at command line
+	gap_x = -1882,
+	gap_y = 0,
+--	gap_y = 26,
+-- Subtract file system buffers from used memory?
+	no_buffers = true,
+	uppercase = false,
+-- number of cpu samples to average
+-- set to 1 to disable averaging
+	cpu_avg_samples = 2,
+-- number of net samples to average
+-- set to 1 to disable averaging
+	net_avg_samples = 5,
+-- Force UTF8? note that UTF8 support required XFT
+	override_utf8_locale = true,
+-- GiB -> G, KiB -> K ...
+	short_units = true,
+-- Add spaces to keep things from moving about? 
+-- This only affects certain objects.
+	use_spacer = 'none',
+	use_xft = true,
+	font = 'glisp',
+-- xftfont DejaVu Sans:size=8
+-- xftalpha 0.8
+-- Some defaults
+-- Don't draw {up,down}speedgraph borders
+	draw_graph_borders = false,
+-- Default size for cpu and fs bars
+	default_bar_width = 60, default_bar_height = 8,
+-- Default colors and also border colors
+	default_color = '#5593b4',
+-- default_shade_color black
+-- default_outline_color grey
+-- own_window_colour grey
+
+	color1 = '#757677',-- graphic elements
+	color2 = '#ffffff',-- highligth elements
+
+-- Help readability where possible by using 
+-- templates EXTENSIVELY. Even inside other templates! ;-)
+
+-- template0 : draw the specified symbol (and set color=color1)
+	template0 = [[
+${color1}${font WebHostingHub\\-Glyphs:size=14}\1${font}]],
+
+-- template1 : draw the 'header' of the various sections
+-- param   1 : the header name: escape spaces whith '\ '
+-- param   2 : the symbol
+	template1 = [[
+${voffset 8}${alignr 30}\1\n${voffset -18}${alignr}${template0 \2}\n${voffset -7}${stippled_hr 1}${color}]],
+
+-- template2 : draw the CPU bars
+-- param   1 : the cpu number
+	template2 = [[
+${template0 $_sym_cpu } ${voffset -2}CPU\1:${color} ${alignr}${cpu cpu\1}% ${color1}${cpubar cpu\1 }${color}${voffset 4}]],
+
+-- template3 : draw the filesystem bars
+-- param   1 : filesys 'name'
+-- param   2 : filesys path
+	template3 = [[
+${voffset 4}${color1}\1:${color} ${alignr}${fs_used \2}/${fs_size \2} ${color1}${fs_bar \2}${color}]],
+
+-- template4 : draw {up,down} totals
+-- param   1 : symbol
+-- param   2 : up or down?
+-- param   3 : interface to monitor
+	template4 = [[
+${voffset 4}${template0 \1}${voffset -4} \2:${color} ${alignr}${\2speed \3} ${color1}${\2speedgraph \3 8,60 black black}${color}]],
+
+-- template5 : draw {up,down}load totals
+-- param   1 : symbol
+-- param   2 : up or down?
+-- param   3 : interface to monitor
+	template5 = [[
+${voffset 4}${template0 \1}${voffset -4} \2load:${color} ${alignr}${total\2 \3}]],
+
+-- ${alignc}${font Arial Black:size=12}ubuntu Linux${font}
+-- ${alignc}16.04.3 LTS (xenial)${voffset -4}
+-- ${alignc}${font Arial Black:size=12}$PRETTY_NAME${font}
+};
+
+conky.text = [[
+${voffset 20}
+${template1 H\ O\ S\ T $_sym_host } 
+${voffset -4}${alignc}${font Futura Bk:bold:size=14}mylinuxbox${font}
+${voffset 2}${alignc}FUJITSU Celsius W580${voffset 2}
+${voffset 2}${alignc}10.241.23.27${voffset 2}
+
+
+${template1 O\ S $_sym_os } 
+${alignc}${font Futura Bk:bold:size=12}$PRETTY_NAME${font}
+${alignc}($VERSION_CODENAME)
+${template0 $_sym_kernel } Kernel:${color} ${alignr}${kernel}${voffset 5}
+
+
+${template1 S\ Y\ S\ T\ E\ M $_sym_system} 
+${template2 1}
+${template2 2}
+${template2 3}
+${template2 4}
+${template2 5}
+${template2 6}
+${template0 $_sym_ram } ${voffset -4}RAM:${color} ${alignr}${memperc}% ${color1}${membar}${color}${voffset 4}
+${template0 $_sym_swap } ${voffset -4}SWAP:${color} ${alignr}${swapperc}% ${color1}${swapbar}${color}${voffset 4}
+${template2 7}
+${template2 8}
+${template2 9}
+${template2 10}
+${template2 11}
+${template2 12}
+${template0 $_sym_uptime } ${voffset -4}Uptime:${color} ${alignr}${uptime_short}
+
+
+${template1 D\ A\ T\ E $_sym_date }
+${voffset -2}${font CMU Typewriter Text:size=16}${alignc}${time %A %d}${font}
+${voffset 0}${font CMU Typewriter Text:size=16}${alignc}${time %B}${font}
+
+${font CMU Typewriter Text:size=8}${execpi 60 oggi=`date +%e`;ncal -bh | sed '1d' | sed -e "s/$oggi /\${color2}${oggi} \${color}/" | sed 's/^/${offset 28}/'}${font}
+#${voffset 2}${font DotMatrix:size=12}${alignc}${time %^A %d}${font}
+#${font DotMatrix:size=18}${alignc}${time %H:%M}${font}
+#${voffset 2}${alignc}${time %^a, %d %B %Y}
+#${voffset -6}${font DotMatrix:size=18}${alignc}${time %H:%M}${font}
+
+
+${template1 F\ I\ L\ E\ \ \ S\ Y\ S\ T\ E\ M $_sym_fs }
+${template3 Root /}
+${template3 Locale /locale}
+${template3 VMs /mnt/VMs}
+
+
+${template1 N\ E\ T\ W\ O\ R\ K $_sym_net }
+${if_existing /proc/net/route eno1}
+${voffset -12}${template4 $_sym_up up eno1}
+${template4 $_sym_down down eno1}
+${template5 $_sym_uload up eno1}
+${template5 $_sym_dload down eno1}
+${endif}
+
+${template0 $_sym_desk } Desktop:${color} ${alignr}[${desktop}]
+]];
