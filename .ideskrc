@@ -1,0 +1,41 @@
+table Config
+  FontName: Droid Sans
+  FontSize: 11
+  FontColor: #3EBDFF
+  ToolTip.FontSize: 10
+  ToolTip.FontName: Droid Sans
+  ToolTip.ForeColor: #0000FF
+  ToolTip.BackColor: #FFFFFF
+  ToolTip.CaptionOnHover: true
+  ToolTip.CaptionPlacement: Left
+  Locked: false
+  Transparency: 80
+  Shadow: true
+  ShadowColor: #000000
+  ShadowX: 4
+  ShadowY: 4 
+  Bold: true
+  ClickDelay: 300
+  IconSnap: true
+  SnapWidth: 10
+  SnapHeight: 10
+  SnapOrigin: BottomRight
+  SnapShadow: false
+  SnapShadowTrans: 200
+  CursorOver: plus
+  CaptionOnHover: false
+  CaptionPlacement: left
+  FillStyle: fillinvert
+  Background.File: /dev/null
+  Background.Source: /dev/null
+end
+
+table Actions
+  Lock: control right doubleClk
+  Reload: control middle doubleClk
+  Drag: control left hold
+  EndDrag: control left singleClk
+  Execute[0]: left singleClk
+  Execute[1]: right doubleClk
+end
+

@@ -1,0 +1,92 @@
+kcmkwm.png
+Command: gnome-terminal
+ 
+spacer
+
+monitor.png
+Command: urxvtc -cd ${HOME}
+
+email.png
+Command: claws
+ 
+brave.png 
+Command: brave-browser
+ 
+google-chrome.png 
+Command: google-chrome
+ 
+firefox.png 
+Command: firefox -P PaoloMazzon
+ 
+torbrowser.png
+Command: /locale/paolo/Downloads/tor-browser_en-US/Browser/start-tor-browser --detach
+
+queue.png
+Command: qmon
+ 
+home.png
+Command: nautilus --no-desktop
+ 
+spacer
+
+macos-catalina.png
+Command: rxvt -geometry 40x2 -cd /mnt/VMs/macOS-Simple-KVM -e ./start.sh;
+ 
+macos-mountainlion.png
+Command: rxvt -bl -geometry 40x2+2048+127 -e vmplayer /mnt/VMs/OS\\ X\\ Mountain\\ Lion/OS\\ X\\ Mountain\\ Lion.vmx;
+ 
+win10.png
+Command: rxvt -bl -geometry 40x2+2048+127 -e vmplayer /mnt/VMs/Windows_10_x64/Windows\\ 10\\ x64.vmx; 
+ 
+sun-sparc.png
+Command: /mnt/VMs/Solaris_2.6/startvm; 
+ 
+win7.png
+Command: rxvt -bl -geometry 40x2+2048+127 -e sudo vmplayer /mnt/VMs/Windows7/Windows7.vmx; 
+ 
+spacer
+ 
+ooimpress.png 
+Command: libreoffice --impress
+ 
+oowriter.png
+Command: libreoffice --writer
+ 
+oocalc.png
+Command: libreoffice --calc
+ 
+calculator.png
+Command: x48
+
+cdwrite.png 
+Command: brasero
+ 
+skype.png 
+Command: skypeforlinux
+ 
+zoom.png
+Command: zoom
+ 
+teamviewer.png
+Command: teamviewer
+ 
+teams.png
+Command: teams
+ 
+spacer
+ 
+gmpc.png
+Command: gmpc
+ 
+password-manager.png
+Command: keepassx
+
+spacer
+
+rstudio.png
+Command: rstudio
+
+spacer
+
+sleep.png
+Command: xfce4-screensaver-command -l
