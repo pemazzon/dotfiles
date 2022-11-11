@@ -1,0 +1,1 @@
+/locale/paolo/.bashrc
