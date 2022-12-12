@@ -20,15 +20,12 @@ To correctly use this conky config:
 You find the former in the '_fonts' directory. I downloaded it from
 http://www.heydonworks.com/article/a-free-icon-web-font
 
-To install it just copy it in
-your ~/.fonts directory and run 
+To install it just copy it in your ~/.local/share/fonts directory and run 
 
-fc-cache -f -v ~/.fonts
+fc-cache -f -v
 
 I have included also Heydings Controls in the fonts direcory for 
-you to experiment.
-I have chosen my 'icons' using gucharmap  Note that you must look 
-under the 'Latin' AND 'Common' script entry to see all the symbols.
+you to experiment. I have chosen my 'icons' using gucharmap
 
 The other 2 fonts are 'Arial Black' (any 'sans serif bold' font 
 will be ok) and artwiz glisp  This one comes with the xfonts-artwiz 
@@ -37,10 +34,10 @@ that you might not find it in your distribution repository but it's
 ok to install the latest version you can find.
 If you can't make this work with xft or you prefer a variable space
 one just choose anything you want. Be aware that you will have to 
-adjust some voffset...
+adjust some voffsets...
 
 Read the config file! I think it makes a nice use of templates: 
-by changing only them you can customize the whole appearance to 
+by only changing those you can customize the whole appearance to 
 your taste.
 
 Happy conky'ng!
