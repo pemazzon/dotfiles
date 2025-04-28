@@ -19,8 +19,18 @@ then
    fi
    echo "table Icon" >../${link}
    echo "    Icon: ${basediricons}/$icon" >>../${link}
-   read command
-   echo "    $command" >>../${link}
+
+# please note the nice trick here ;-)
+#
+# by using read / echo with the "-e" you can define
+# multiple Commands in one line by using something like
+#
+# Command[0]: startvm BlissOS;\\n    Command[1]: stopvm BlissOS;
+#
+# notice the double backslashed \\n and the four spaces before Command[1]
+
+   read -e command
+   echo -e "    $command" >>../${link}
    echo "    Width:  $iconsize" >>../${link}
    echo "    Height: $iconsize" >>../${link}
    echo "    X: $x" >>../${link}
