@@ -14,12 +14,12 @@ conky.config = {
 	own_window_title = 'Conky',
 ----------------------------------------------------------------------------
 --  set this to true only if using picom (compton)
---	own_window = true,
+	own_window = true,
 ----------------------------------------------------------------------------
 -- If own_window is true, these window manager hints may be used
     own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 	own_window_transparent = true,
-	own_window_argb_visual = true,
+--	own_window_argb_visual = true,
 	own_window_type = 'desktop',
 --  xinerama_head = 1,
 -- Use double buffering (reduces flicker, may not work for everyone)
@@ -40,7 +40,7 @@ conky.config = {
 -- alignment = 'bottom_right'
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
-	gap_x = -1882,
+	gap_x = 36,
 	gap_y = 0,
 --	gap_y = 26,
 -- Subtract file system buffers from used memory?
@@ -74,7 +74,8 @@ conky.config = {
 -- default_outline_color grey
 -- own_window_colour grey
 
-	color1 = '#757677',-- graphic elements
+--	color1 = '#757677',-- graphic elements
+	color1 = 'gray46',-- graphic elements
 	color2 = '#ffffff',-- highligth elements
 
 -- Help readability where possible by using 
@@ -99,14 +100,14 @@ ${template0 $_sym_cpu } ${voffset -2}CPU\1:${color} ${alignr}${cpu cpu\1}% ${col
 -- param   1 : filesys 'name'
 -- param   2 : filesys path
 	template3 = [[
-${voffset 4}${color1}\1:${color} ${alignr}${fs_used \2}/${fs_size \2} ${color1}${fs_bar \2}${color}]],
+${voffset 4}${color1}\1:${color} ${alignr}${fs_used \2}/${fs_free \2} ${color1}${fs_bar \2}${color}]],
 
 -- template4 : draw {up,down} totals
 -- param   1 : symbol
 -- param   2 : up or down?
 -- param   3 : interface to monitor
 	template4 = [[
-${voffset 4}${template0 \1}${voffset -4} \2:${color} ${alignr}${\2speed \3} ${color1}${\2speedgraph \3 8,60 black black}${color}]],
+${voffset 4}${template0 \1}${voffset -4} \2:${color} ${alignr}${\2speed \3} ${color1}${\2speedgraph \3 8,60 gray46 black}${color}]],
 
 -- template5 : draw {up,down}load totals
 -- param   1 : symbol
@@ -125,16 +126,15 @@ ${voffset 20}
 ${template1 H\ O\ S\ T $_sym_host } 
 ${voffset -4}${alignc}${font Futura Bk:bold:size=14}mylinuxbox${font}
 ${voffset 2}${alignc}FUJITSU Celsius W580${voffset 2}
-${voffset 2}${alignc}10.241.23.27${voffset 2}
-
+${voffset 2}${alignc}${addr eno1}${voffset 2}
 
 ${template1 O\ S $_sym_os } 
 ${alignc}${font Futura Bk:bold:size=12}$PRETTY_NAME${font}
 ${alignc}($VERSION_CODENAME)
 ${template0 $_sym_kernel } Kernel:${color} ${alignr}${kernel}${voffset 5}
 
-
 ${template1 S\ Y\ S\ T\ E\ M $_sym_system} 
+${voffset 4}${alignc}${color1}$MYCPU${voffset 4}
 ${template2 1}
 ${template2 2}
 ${template2 3}
@@ -151,7 +151,6 @@ ${template2 11}
 ${template2 12}
 ${template0 $_sym_uptime } ${voffset -4}Uptime:${color} ${alignr}${uptime_short}
 
-
 ${template1 D\ A\ T\ E $_sym_date }
 ${voffset -2}${font CMU Typewriter Text:size=16}${alignc}${time %A %d}${font}
 ${voffset 0}${font CMU Typewriter Text:size=16}${alignc}${time %B}${font}
@@ -162,12 +161,10 @@ ${font CMU Typewriter Text:size=8}${execpi 60 oggi=`date +%e`;ncal -bh | sed '1d
 #${voffset 2}${alignc}${time %^a, %d %B %Y}
 #${voffset -6}${font DotMatrix:size=18}${alignc}${time %H:%M}${font}
 
-
 ${template1 F\ I\ L\ E\ \ \ S\ Y\ S\ T\ E\ M $_sym_fs }
 ${template3 Root /}
 ${template3 Locale /locale}
 ${template3 VMs /mnt/VMs}
-
 
 ${template1 N\ E\ T\ W\ O\ R\ K $_sym_net }
 ${if_existing /proc/net/route eno1}

@@ -2,12 +2,6 @@ table Config
   FontName: Droid Sans
   FontSize: 11
   FontColor: #3EBDFF
-  ToolTip.FontSize: 10
-  ToolTip.FontName: Droid Sans
-  ToolTip.ForeColor: #0000FF
-  ToolTip.BackColor: #FFFFFF
-  ToolTip.CaptionOnHover: true
-  ToolTip.CaptionPlacement: Left
   Locked: false
   Transparency: 80
   Shadow: true
@@ -23,7 +17,13 @@ table Config
   SnapShadow: false
   SnapShadowTrans: 200
   CursorOver: plus
-  CaptionOnHover: false
+  CaptionOnHover: true
+  ToolTip.FontSize: 10
+  ToolTip.FontName: Atkinson Hyperlegible
+  ToolTip.ForeColor: #2222FF
+  ToolTip.BackColor: #CCC
+  ToolTip.CaptionOnHover: true
+  ToolTip.CaptionPlacement: Left
   CaptionPlacement: left
   FillStyle: fillinvert
   Background.File: /dev/null

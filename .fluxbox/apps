@@ -3,7 +3,15 @@
   [Deco]	{BORDER}
   [Hidden]	{yes}
 [end]
+[app] (class=eu.betterbird.Betterbird) (role=3pane)
+  [Head]	{2}
+  [Position]	(UPPERLEFT)	{0% 0%}
+  [Deco]	{BORDER}
+[end]
 [app] (class=CSSH)
+  [Deco]	{BORDER}
+[end]
+[app] (@WM_ICON_NAME=CSSH)
   [Deco]	{BORDER}
 [end]
 [app] (class=RDP)
@@ -20,13 +28,16 @@
   [Deco]	{BORDER}
 [end]
 [app] (name=vmplayer) (class=Vmplayer)
-  [Position]	(UPPERLEFT)	{9% -3%}
+  [Position]	(UPPERLEFT)	{5% -1%}
   [Deco]	{NORMAL}
   [Close]	{yes}
 [end]
 [group]  (workspace=0)
  [app] (name=claws-mail) (class=Claws-mail) (role=mainwindow)
  [app] (class=[Tt]hunderbird) (role=3pane)
+ [app] (class=[Bb]etterbird) (role=3pane)
+ [app] (class=eu.betterbird.Betterbird)
+  [Head]	{1}
   [Position]	(UPPERLEFT)	{0% 0%}
 [end]
 [app] (class=freerdp)
@@ -34,5 +45,7 @@
   [Deco]	{BORDER}
 [end]
 [app] (name=brave-browser) (class=Brave-browser) (role=browser)
-  [Head]	{2}
+  [Head]	{1}
+[end]
+[app] (name=zoom ) (class=zoom)
 [end]

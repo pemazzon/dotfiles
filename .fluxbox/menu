@@ -13,7 +13,7 @@
 #  [exec] (MORK)            {. /locale/paolo/.bashrc ; rxvt -fn a14 -fg 'lightblue1' -bg 'dodgerblue4' -geometry 90x30 -e ssh -Y -A root@mork} </locale/paolo/.kde/share/icons/CrystalClear/16x16/apps/terminal.png> 
    [nop]
 #[include] (/etc/X11/fluxbox/fluxbox-menu)
-   [exec] (Update Menus)    {xdgmenumaker -i -f fluxbox > ~/.fluxbox/xdg-menu} <~/.fluxbox/menuicons/light/open-menu-symbolic.symbolic.png>
+   [exec] (Update Menus)    {xdgmenumaker -s 24 -i -f fluxbox > ~/.fluxbox/xdg-menu} <~/.fluxbox/menuicons/light/open-menu-symbolic.symbolic.png>
  [include] (~/.fluxbox/xdg-menu)
    [nop]
    [config]  (Configuration)    <~/.fluxbox/menuicons/light/open-menu-symbolic.symbolic.png>

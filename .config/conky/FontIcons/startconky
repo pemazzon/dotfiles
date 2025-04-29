@@ -2,7 +2,15 @@
 
 CONF=~/.config/conky/FontIcons/fonticons.conky
 
+if [ "$XDG_SESSION_TYPE" = "wayland" ];
+then
+   CONF=~/.config/conky/FontIcons/fonticons-wayland.conky
+fi
+
 while read i; do export "$i"; done < /etc/os-release
+
+export MYCPU=`cat /proc/cpuinfo | grep 'model name' | head -1 | cut -d: -f2 | cut -b2-`
+export PRETTY_NAME=`echo $PRETTY_NAME | sed 's/"//g'`
 
 export LANG=en_US.utf8
 export _sym_host=$'\uf0fb'
