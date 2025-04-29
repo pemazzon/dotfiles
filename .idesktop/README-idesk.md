@@ -16,4 +16,4 @@ need to do some manual configuration, plus the default example 'lnk' file is
 accompanied by a bit sad xpm icon :-/
 
 That's why i created a script and a kind of 'configuration file' that you can
-find inside the .icons directory (see doicons.sh and allicons.txt).
+find inside the icons directory (see doicons.sh and allicons.txt).
