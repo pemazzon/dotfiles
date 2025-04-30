@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+
+<!--
+  This is a very simple config file with many options missing. For a complete
+  set of options with comments, see docs/rc.xml.all
+-->
+
+<labwc_config>
+
+  <desktops number="8" />
+  <!-- margin top="" bottom="" left="" right="26" output="" -->
+
+  <placement>
+    <policy>automatic</policy>
+  </placement>
+
+  <resistance>
+    <screenEdgeStrength>20</screenEdgeStrength>
+    <windowEdgeStrength>20</windowEdgeStrength>
+  </resistance>
+
+  <theme>
+    <!-- name>BL-Lithium</name -->
+    <!-- name>RainForest</name -->
+    <name>SoftWaves</name>
+    <cornerRadius>8</cornerRadius>
+    <font place="">
+       <name>Atkinson Hyperlegible</name>
+       <size>12</size>
+    </font>
+  </theme>
+
+  <windowSwitcher show="yes" preview="yes" outlines="yes" allWorkspaces="yes">
+    <fields>
+      <field content="type" width="15%"/>
+      <field content="trimmed_identifier" width="25%"/>
+      <field content="title" width="60%"/>
+    </fields>
+  </windowSwitcher>
+
+  <!--
+    Keybind actions are specified in labwc-actions(5)
+    The following keybind modifiers are supported:
+      M - window/super/logo
+      A - alt
+      C - ctrl
+      S - shift
+
+    Please note: 
+       using the faboulous pem keyboard layout transforms
+       the Win key into the Meta key, so M-KEY is equivalent
+       to 'Win key' + KEY
+
+    Use <keyboard><default /> to load all the default keybinds (those listed
+    below). If the default keybinds are largely what you want, a sensible
+    approach could be to start the <keyboard> section with a <default />
+    element, and then (re-)define any special binds you need such as launching
+    your favourite terminal or application launcher. See rc.xml for an example.
+  -->
+
+  <keyboard>
+    <default />
+    <keybind key="M-Left"><action name="SnapToEdge" direction="left" /></keybind>
+    <keybind key="M-Right"><action name="SnapToEdge" direction="right" /></keybind>
+    <keybind key="M-Up"><action name="SnapToEdge" direction="up" /></keybind>
+    <keybind key="M-Down"><action name="SnapToEdge" direction="down" /></keybind>
+    <keybind key="M-F1"><action name="GoToDesktop" to="1" /></keybind>
+    <keybind key="M-F2"><action name="GoToDesktop" to="2" /></keybind>
+    <keybind key="M-F3"><action name="GoToDesktop" to="3" /></keybind>
+    <keybind key="M-F4"><action name="GoToDesktop" to="4" /></keybind>
+    <keybind key="M-1"><action name="GoToDesktop" to="5" /></keybind>
+    <keybind key="M-2"><action name="GoToDesktop" to="6" /></keybind>
+    <keybind key="M-3"><action name="GoToDesktop" to="7" /></keybind>
+    <keybind key="M-4"><action name="GoToDesktop" to="8" /></keybind>
+    <!-- Use a different terminal emulator -->
+    <keybind key="M-Return">
+      <action name="Execute" command="urxvtc" />
+    </keybind>
+    <!--
+      Remove a previously defined keybind
+      A shorter alternative is <keybind key="W-F4" />
+    -->
+    <keybind key="W-a">
+      <action name="None" />
+    </keybind>
+    <keybind key="A-F2">
+      <action name="Execute" command="rofi -show drun"/>
+    </keybind>
+  </keyboard>
+
+  <mouse>
+    <default />
+    <context name="Root">
+      <mousebind button="Left" action="Press">
+        <!-- action name="ShowMenu" menu="some-custom-menu" -->
+        <action name="None" />
+      </mousebind>
+      <mousebind button="Middle" action="Press">
+        <!-- action name="ShowMenu" menu="some-custom-menu" -->
+        <action name="None" />
+      </mousebind>
+    </context>
+  </mouse>
+
+  <focus>
+    <followMouse>yes</followMouse>
+    <followMouseRequiresMovement>yes</followMouseRequiresMovement>
+    <raiseOnFocus>no</raiseOnFocus>
+  </focus>
+
+</labwc_config>
